@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cours Albert — l'app Mac des étudiants d'Albert School</title>
+<meta name="description" content="Cours, emploi du temps, examens, présence et espaces de travail partagés, au même endroit. Une app Mac gratuite faite par un étudiant d'Albert School.">
+<meta property="og:title" content="Cours Albert — l'app Mac des étudiants d'Albert School">
+<meta property="og:description" content="Cours, emploi du temps, examens, présence et espaces de travail partagés, au même endroit.">
+<meta property="og:image" content="https://tomabanicevic.github.io/cours-albert/img/espace.webp">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Kalam:wght@400;700&family=Literata:opsz,wght@7..72,500;7..72,600;7..72,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --encre:#0d2257;
+  --royal:#1f4fe0;
+  --royal-2:#1a43c4;
+  --ciel:#e6efff;
+  --or:#f2b33d;
+  --papier:#fbfcff;
+  --marge:#e46876;
+  --ligne:#dfe8f8;
+  --ligne-forte:#c8d7f1;
+  --muted:#4f5f88;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --main:'Kalam','Bradley Hand','Segoe Print',cursive;
+  --m:88px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papier);color:var(--encre);font:400 17.5px/1.62 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--royal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* page de cahier */
+.cahier{position:relative;background-color:var(--papier);
+  background-image:
+    linear-gradient(90deg,transparent calc(var(--m) - 1px),var(--marge) calc(var(--m) - 1px),var(--marge) calc(var(--m) + 1px),transparent calc(var(--m) + 1px)),
+    linear-gradient(var(--ligne-forte) 1px,transparent 1px),
+    linear-gradient(var(--ligne) 1px,transparent 1px),
+    linear-gradient(90deg,var(--ligne) 1px,transparent 1px);
+  background-size:100% 100%,100% 32px,100% 8px,32px 100%;
+  background-position:0 0,0 -1px,0 -1px,var(--m) 0;
+  padding-bottom:96px;border-bottom:1px solid var(--ligne-forte)}
+.cahier::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(transparent,var(--papier));pointer-events:none}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:10px}
+.brand b{font:700 21px/1 var(--serif);letter-spacing:-.01em}
+.top nav{display:flex;align-items:center;gap:22px;font-weight:600}
+.top nav a.link{text-decoration:none;color:var(--muted)}
+.top nav a.link:hover{color:var(--encre)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--royal);color:#fff;text-decoration:none;font:600 16.5px/1 var(--sans);padding:16px 24px;border-radius:12px;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 12px 24px -14px rgba(31,79,224,.9);transition:background .15s ease,transform .15s ease}
+.btn:hover{background:var(--royal-2);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px}
+.btn.small{padding:11px 16px;font-size:15px;border-radius:10px}
+.ghost{font-weight:600;color:var(--encre);text-decoration-thickness:1.5px;text-underline-offset:4px}
+
+.hero{padding:76px 0 0}
+.hero-text{max-width:820px}
+.hero h1{font:600 clamp(40px,5.6vw,70px)/1.06 var(--serif);letter-spacing:-.022em;margin:0 0 24px;font-variation-settings:'opsz' 72}
+.hero .sub{font-size:20px;line-height:1.55;color:#33447a;max-width:35em;margin:0 0 32px}
+.act{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.req{margin:18px 0 0;font-size:14.5px;color:var(--muted)}
+
+.shot-zone{position:relative;z-index:2;margin-top:72px}
+.window{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(13,34,87,.10),0 40px 80px -40px rgba(13,34,87,.55),0 12px 24px -16px rgba(13,34,87,.35)}
+.window .bar{height:34px;display:flex;align-items:center;gap:8px;padding:0 14px;background:linear-gradient(#f3f5fa,#eceff6);border-bottom:1px solid #e1e6f0}
+.window .bar i{width:12px;height:12px;border-radius:50%;background:#ff5f57}
+.window .bar i:nth-child(2){background:#febc2e}
+.window .bar i:nth-child(3){background:#28c840}
+.window img{display:block;width:100%;height:auto}
+
+.note{position:absolute;font:400 22px/1.15 var(--main);color:#2348c8;transform:rotate(-3deg);white-space:nowrap}
+.note svg{position:absolute;overflow:visible;fill:none;stroke:#2348c8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.n1{left:-6px;top:-62px;transform:rotate(-4deg)}
+.n1 svg{left:150px;top:30px;width:70px;height:128px}
+.n2{right:40px;top:-74px;transform:rotate(3deg)}
+.n2 svg{left:178px;top:30px;width:40px;height:84px}
+.n3{right:-6px;bottom:-66px;transform:rotate(-2deg)}
+.n3 svg{left:236px;top:-50px;width:40px;height:50px}
+.star{position:absolute;color:var(--or);font-size:26px;line-height:1}
+
+/* sections */
+section{padding:112px 0 0}
+h2{font:600 clamp(30px,3.8vw,46px)/1.12 var(--serif);letter-spacing:-.02em;margin:0 0 18px;max-width:18em;font-variation-settings:'opsz' 60}
+.lede{font-size:19px;color:var(--muted);max-width:36em;margin:0 0 44px}
+
+.school{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:56px;align-items:start}
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:20px 0 20px 30px;border-top:1px solid var(--ligne-forte);position:relative}
+.list li:last-child{border-bottom:1px solid var(--ligne-forte)}
+.list li::before{content:"";position:absolute;left:2px;top:30px;width:12px;height:12px;border-radius:3px;background:var(--royal)}
+.list li.or::before{background:var(--or)}
+.list li.rose::before{background:var(--marge)}
+.list li.vert::before{background:#22a06b}
+.list b{display:block;font-size:18.5px;font-weight:700;color:var(--encre);margin-bottom:2px}
+.list span{color:var(--muted)}
+.stack-shots{position:relative;padding-bottom:120px}
+.stack-shots .window+.window{position:absolute;width:80%;right:-28px;bottom:0}
+.stack-shots .window:first-child{width:88%}
+
+.spaces{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:start}
+.layouts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px;padding:0;list-style:none}
+.layouts li{font:600 15px/1 var(--sans);padding:10px 14px;border-radius:999px;background:var(--ciel);color:#1d3d9e}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px}
+.feat h3{font:700 18.5px/1.3 var(--sans);margin:0 0 6px}
+.feat p{margin:0;color:var(--muted)}
+.qr{background:#fff;border:1px solid var(--ligne-forte);border-radius:18px;padding:28px;position:sticky;top:28px}
+.qr .code{display:block;width:124px;height:124px;margin:0 0 20px;padding:10px;background:#fff;border:1px solid var(--ligne-forte);border-radius:12px;box-sizing:content-box}
+.qr h3{font:600 24px/1.25 var(--serif);margin:0 0 10px}
+.qr p{margin:0 0 12px;color:var(--muted)}
+.qr p:last-child{margin:0}
+
+.ai{background:var(--ciel);border-radius:28px;padding:64px 56px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:center}
+.ai h2{margin-bottom:14px}
+.ai p{margin:0 0 14px;color:#36477d}
+.ai p:last-child{margin:0}
+.providers{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.providers li{background:#fff;border-radius:10px;padding:10px 14px;font-weight:600;font-size:15.5px;box-shadow:0 1px 0 rgba(13,34,87,.06)}
+.providers li.reco{background:var(--encre);color:#fff}
+
+.privacy{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.privacy p{margin:0 0 16px;color:var(--muted);font-size:18px}
+.privacy p b{color:var(--encre)}
+.path{font:500 15px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#fff;border:1px solid var(--ligne-forte);border-radius:10px;padding:2px 8px;color:var(--encre);white-space:nowrap}
+
+.install{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:60px}
+.install ol{margin:0;padding:0;list-style:none;counter-reset:s}
+.install li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:0 0 26px}
+.install li::before{content:counter(s);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--royal);color:var(--royal);font:700 17px/1 var(--serif)}
+.install li b{display:block;font-size:18.5px;font-weight:700;margin-bottom:2px}
+.install li span{color:var(--muted)}
+.box{background:#fff;border:1px solid var(--ligne-forte);border-radius:18px;padding:26px}
+.box h3{margin:0 0 6px;font:700 18px/1.3 var(--sans)}
+.box p{margin:0 0 14px;color:var(--muted);font-size:16px}
+pre{margin:0 0 18px;background:var(--encre);color:#e5ecff;border-radius:12px;padding:14px 16px;overflow-x:auto;white-space:pre-wrap;word-break:break-word;font:500 13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
+pre:last-child{margin-bottom:0}
+
+footer{margin-top:112px;padding:34px 0 46px;border-top:1px solid var(--ligne-forte);color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--encre);font-weight:600}
+
+@media (max-width:980px){
+  .school,.spaces,.privacy,.install,.ai{grid-template-columns:1fr}
+  .qr{position:static}
+  .stack-shots{padding-bottom:90px}
+  .ai{padding:48px 28px;gap:28px}
+  .note{display:none}
+}
+@media (max-width:720px){
+  :root{--m:8px}
+  .wrap{padding:0 18px}
+  .top nav a.link{display:none}
+  .hero{padding-top:52px}
+  .hero .sub{font-size:18px}
+  .shot-zone{margin-top:48px}
+  .feat{grid-template-columns:1fr}
+  section{padding-top:84px}
+  .stack-shots .window+.window{right:-8px}
+  .path{white-space:normal;word-break:break-all}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="cahier">
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="./"><img src="icon.png" alt=""><b>Cours Albert</b></a>
+      <nav>
+        <a class="link" href="https://github.com/tomabanicevic/cours-albert">Code source</a>
+        <a class="btn small" href="https://github.com/tomabanicevic/cours-albert/releases/latest/download/Cours-Albert-3.3.2-macOS.zip">Télécharger</a>
+      </nav>
+    </header>
+
+    <main>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Tes cours, ton planning et tes fiches de révision, au même endroit.</h1>
+        <p class="sub">L'app Mac des étudiants d'Albert School. Elle lit Inside pour toi, range tes supports dans l'ordre et te laisse réviser à plusieurs sur des tableaux partagés.</p>
+        <div class="act">
+          <a class="btn" href="https://github.com/tomabanicevic/cours-albert/releases/latest/download/Cours-Albert-3.3.2-macOS.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Télécharger pour Mac</a>
+          <a class="ghost" href="#installer">Comment l'installer</a>
+        </div>
+        <p class="req">Gratuit, sans compte. macOS 12 ou plus récent, Apple Silicon et Intel.</p>
+      </div>
+
+      <div class="shot-zone">
+        <p class="note n1" aria-hidden="true">tes fiches en colonnes<svg viewBox="0 0 70 128"><path d="M4 4c40 10 56 54 48 118"/><path d="M42 110l10 13 9-14"/></svg></p>
+        <p class="note n2" aria-hidden="true">partage par lien ou QR code<svg viewBox="0 0 40 84"><path d="M6 2c18 20 22 48 18 78"/><path d="M15 70l9 12 8-13"/></svg></p>
+        <p class="note n3" aria-hidden="true">la taille des cartes, comme dans le Finder<svg viewBox="0 0 40 50"><path d="M18 48c-4-14-4-30 4-44"/><path d="M12 13l10-10 8 12"/></svg></p>
+        <div class="window"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/espace.webp" width="1800" height="922" alt="Un tableau de révision dans Cours Albert : quatre colonnes, Fiches de cours, Exercices, Questions et Pièges à éviter, avec des formules mathématiques."></div>
+      </div>
+    </div>
+    </main>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="school">
+    <div>
+      <h2>Albert School, rangé pour toi</h2>
+      <p class="lede">Tu te connectes une fois à Inside avec Google. Ensuite l'app vérifie tout chaque heure, même fermée.</p>
+      <ul class="list">
+        <li><b>Aujourd'hui et emploi du temps</b><span>Ta semaine avec les salles, exportable vers Calendrier.</span></li>
+        <li class="rose"><b>Examens</b><span>Dates, durées, coefficients et le compte à rebours avant chaque épreuve.</span></li>
+        <li class="or"><b>Présence</b><span>Ton taux par unité et le nombre d'absences encore possibles avant le seuil de 85 %.</span></li>
+        <li class="vert"><b>Cours rangés dans l'ordre</b><span>Les supports d'Inside, de Google Drive et du Bureau, triés par catégorie : TD1 avant TD2, le corrigé juste après son sujet. Tu peux tout réordonner à la main.</span></li>
+      </ul>
+    </div>
+    <div class="stack-shots">
+      <div class="window"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/planning.webp" width="1800" height="1125" loading="lazy" alt="L'emploi du temps de la semaine, avec les cours de chaque jour et leurs salles."></div>
+      <div class="window"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/examens.webp" width="1800" height="1125" loading="lazy" alt="La page Examens : le prochain examen dans 12 jours et la pondération de chaque cours."></div>
+    </div>
+  </section>
+
+  <section class="spaces">
+    <div>
+      <h2>Des espaces pour travailler à plusieurs</h2>
+      <p class="lede">Des tableaux façon Padlet et des tableaux blancs, pour réviser, préparer un projet de groupe ou un exposé.</p>
+      <ul class="layouts" aria-label="Les huit dispositions d'un tableau">
+        <li>Mur</li><li>Colonnes</li><li>Grille</li><li>Tableau de données</li><li>Flux</li><li>Chronologie</li><li>Carte du monde</li><li>Disposition libre</li>
+      </ul>
+      <div class="feat">
+        <div><h3>Tout se publie</h3><p>Texte, formules LaTeX, images, vidéos, fichiers, liens, sondages, enregistrements audio ou d'écran.</p></div>
+        <div><h3>Dessiner partout</h3><p>Stylo, surligneur et texte libre par-dessus n'importe quel tableau, partagés en direct.</p></div>
+        <div><h3>Espaces libres</h3><p>Des cartes de tableau blanc avec formes, flèches et objets cliquables pour faire des quiz ou des parcours.</p></div>
+        <div><h3>Exports</h3><p>PDF, image, CSV, Excel avec plusieurs feuilles, ZIP de tous les fichiers, ou sauvegarde à réimporter.</p></div>
+      </div>
+    </div>
+    <aside class="qr">
+      <svg class="code" viewBox="0 0 33 33" role="img" aria-label="QR code vers ce site" shape-rendering="crispEdges"><path fill="#0d2257" d="M0,0h1v1h-1zM1,0h1v1h-1zM2,0h1v1h-1zM3,0h1v1h-1zM4,0h1v1h-1zM5,0h1v1h-1zM6,0h1v1h-1zM8,0h1v1h-1zM11,0h1v1h-1zM13,0h1v1h-1zM14,0h1v1h-1zM17,0h1v1h-1zM18,0h1v1h-1zM20,0h1v1h-1zM22,0h1v1h-1zM26,0h1v1h-1zM27,0h1v1h-1zM28,0h1v1h-1zM29,0h1v1h-1zM30,0h1v1h-1zM31,0h1v1h-1zM32,0h1v1h-1zM0,1h1v1h-1zM6,1h1v1h-1zM8,1h1v1h-1zM10,1h1v1h-1zM11,1h1v1h-1zM13,1h1v1h-1zM14,1h1v1h-1zM18,1h1v1h-1zM19,1h1v1h-1zM21,1h1v1h-1zM22,1h1v1h-1zM24,1h1v1h-1zM26,1h1v1h-1zM32,1h1v1h-1zM0,2h1v1h-1zM2,2h1v1h-1zM3,2h1v1h-1zM4,2h1v1h-1zM6,2h1v1h-1zM8,2h1v1h-1zM9,2h1v1h-1zM12,2h1v1h-1zM13,2h1v1h-1zM14,2h1v1h-1zM21,2h1v1h-1zM23,2h1v1h-1zM24,2h1v1h-1zM26,2h1v1h-1zM28,2h1v1h-1zM29,2h1v1h-1zM30,2h1v1h-1zM32,2h1v1h-1zM0,3h1v1h-1zM2,3h1v1h-1zM3,3h1v1h-1zM4,3h1v1h-1zM6,3h1v1h-1zM10,3h1v1h-1zM11,3h1v1h-1zM12,3h1v1h-1zM14,3h1v1h-1zM15,3h1v1h-1zM16,3h1v1h-1zM18,3h1v1h-1zM20,3h1v1h-1zM22,3h1v1h-1zM24,3h1v1h-1zM26,3h1v1h-1zM28,3h1v1h-1zM29,3h1v1h-1zM30,3h1v1h-1zM32,3h1v1h-1zM0,4h1v1h-1zM2,4h1v1h-1zM3,4h1v1h-1zM4,4h1v1h-1zM6,4h1v1h-1zM8,4h1v1h-1zM9,4h1v1h-1zM10,4h1v1h-1zM11,4h1v1h-1zM12,4h1v1h-1zM13,4h1v1h-1zM15,4h1v1h-1zM16,4h1v1h-1zM21,4h1v1h-1zM24,4h1v1h-1zM26,4h1v1h-1zM28,4h1v1h-1zM29,4h1v1h-1zM30,4h1v1h-1zM32,4h1v1h-1zM0,5h1v1h-1zM6,5h1v1h-1zM9,5h1v1h-1zM15,5h1v1h-1zM16,5h1v1h-1zM19,5h1v1h-1zM22,5h1v1h-1zM23,5h1v1h-1zM24,5h1v1h-1zM26,5h1v1h-1zM32,5h1v1h-1zM0,6h1v1h-1zM1,6h1v1h-1zM2,6h1v1h-1zM3,6h1v1h-1zM4,6h1v1h-1zM5,6h1v1h-1zM6,6h1v1h-1zM8,6h1v1h-1zM10,6h1v1h-1zM12,6h1v1h-1zM14,6h1v1h-1zM16,6h1v1h-1zM18,6h1v1h-1zM20,6h1v1h-1zM22,6h1v1h-1zM24,6h1v1h-1zM26,6h1v1h-1zM27,6h1v1h-1zM28,6h1v1h-1zM29,6h1v1h-1zM30,6h1v1h-1zM31,6h1v1h-1zM32,6h1v1h-1zM9,7h1v1h-1zM12,7h1v1h-1zM13,7h1v1h-1zM15,7h1v1h-1zM16,7h1v1h-1zM18,7h1v1h-1zM22,7h1v1h-1zM0,8h1v1h-1zM3,8h1v1h-1zM4,8h1v1h-1zM5,8h1v1h-1zM6,8h1v1h-1zM7,8h1v1h-1zM8,8h1v1h-1zM10,8h1v1h-1zM11,8h1v1h-1zM12,8h1v1h-1zM14,8h1v1h-1zM16,8h1v1h-1zM17,8h1v1h-1zM24,8h1v1h-1zM25,8h1v1h-1zM28,8h1v1h-1zM30,8h1v1h-1zM31,8h1v1h-1zM32,8h1v1h-1zM0,9h1v1h-1zM2,9h1v1h-1zM3,9h1v1h-1zM4,9h1v1h-1zM7,9h1v1h-1zM9,9h1v1h-1zM10,9h1v1h-1zM11,9h1v1h-1zM13,9h1v1h-1zM14,9h1v1h-1zM15,9h1v1h-1zM16,9h1v1h-1zM17,9h1v1h-1zM18,9h1v1h-1zM19,9h1v1h-1zM21,9h1v1h-1zM22,9h1v1h-1zM23,9h1v1h-1zM28,9h1v1h-1zM29,9h1v1h-1zM30,9h1v1h-1zM0,10h1v1h-1zM1,10h1v1h-1zM2,10h1v1h-1zM3,10h1v1h-1zM4,10h1v1h-1zM6,10h1v1h-1zM7,10h1v1h-1zM9,10h1v1h-1zM11,10h1v1h-1zM12,10h1v1h-1zM13,10h1v1h-1zM15,10h1v1h-1zM22,10h1v1h-1zM23,10h1v1h-1zM26,10h1v1h-1zM28,10h1v1h-1zM29,10h1v1h-1zM30,10h1v1h-1zM31,10h1v1h-1zM32,10h1v1h-1zM0,11h1v1h-1zM2,11h1v1h-1zM3,11h1v1h-1zM5,11h1v1h-1zM9,11h1v1h-1zM10,11h1v1h-1zM13,11h1v1h-1zM15,11h1v1h-1zM16,11h1v1h-1zM18,11h1v1h-1zM21,11h1v1h-1zM22,11h1v1h-1zM23,11h1v1h-1zM24,11h1v1h-1zM25,11h1v1h-1zM27,11h1v1h-1zM30,11h1v1h-1zM31,11h1v1h-1zM32,11h1v1h-1zM1,12h1v1h-1zM6,12h1v1h-1zM8,12h1v1h-1zM11,12h1v1h-1zM13,12h1v1h-1zM15,12h1v1h-1zM17,12h1v1h-1zM21,12h1v1h-1zM23,12h1v1h-1zM26,12h1v1h-1zM27,12h1v1h-1zM31,12h1v1h-1zM32,12h1v1h-1zM0,13h1v1h-1zM1,13h1v1h-1zM3,13h1v1h-1zM4,13h1v1h-1zM5,13h1v1h-1zM8,13h1v1h-1zM9,13h1v1h-1zM11,13h1v1h-1zM12,13h1v1h-1zM14,13h1v1h-1zM18,13h1v1h-1zM19,13h1v1h-1zM20,13h1v1h-1zM21,13h1v1h-1zM23,13h1v1h-1zM25,13h1v1h-1zM27,13h1v1h-1zM29,13h1v1h-1zM0,14h1v1h-1zM2,14h1v1h-1zM3,14h1v1h-1zM4,14h1v1h-1zM5,14h1v1h-1zM6,14h1v1h-1zM9,14h1v1h-1zM14,14h1v1h-1zM15,14h1v1h-1zM17,14h1v1h-1zM19,14h1v1h-1zM20,14h1v1h-1zM24,14h1v1h-1zM26,14h1v1h-1zM28,14h1v1h-1zM29,14h1v1h-1zM0,15h1v1h-1zM1,15h1v1h-1zM3,15h1v1h-1zM7,15h1v1h-1zM9,15h1v1h-1zM11,15h1v1h-1zM13,15h1v1h-1zM14,15h1v1h-1zM16,15h1v1h-1zM20,15h1v1h-1zM22,15h1v1h-1zM23,15h1v1h-1zM24,15h1v1h-1zM25,15h1v1h-1zM27,15h1v1h-1zM29,15h1v1h-1zM30,15h1v1h-1zM32,15h1v1h-1zM0,16h1v1h-1zM3,16h1v1h-1zM4,16h1v1h-1zM5,16h1v1h-1zM6,16h1v1h-1zM8,16h1v1h-1zM10,16h1v1h-1zM12,16h1v1h-1zM14,16h1v1h-1zM15,16h1v1h-1zM20,16h1v1h-1zM22,16h1v1h-1zM23,16h1v1h-1zM24,16h1v1h-1zM25,16h1v1h-1zM26,16h1v1h-1zM27,16h1v1h-1zM28,16h1v1h-1zM0,17h1v1h-1zM1,17h1v1h-1zM2,17h1v1h-1zM4,17h1v1h-1zM5,17h1v1h-1zM7,17h1v1h-1zM10,17h1v1h-1zM11,17h1v1h-1zM13,17h1v1h-1zM15,17h1v1h-1zM17,17h1v1h-1zM18,17h1v1h-1zM19,17h1v1h-1zM20,17h1v1h-1zM22,17h1v1h-1zM25,17h1v1h-1zM26,17h1v1h-1zM28,17h1v1h-1zM30,17h1v1h-1zM32,17h1v1h-1zM2,18h1v1h-1zM3,18h1v1h-1zM5,18h1v1h-1zM6,18h1v1h-1zM8,18h1v1h-1zM11,18h1v1h-1zM13,18h1v1h-1zM14,18h1v1h-1zM15,18h1v1h-1zM17,18h1v1h-1zM18,18h1v1h-1zM19,18h1v1h-1zM20,18h1v1h-1zM21,18h1v1h-1zM22,18h1v1h-1zM23,18h1v1h-1zM27,18h1v1h-1zM29,18h1v1h-1zM30,18h1v1h-1zM32,18h1v1h-1zM7,19h1v1h-1zM10,19h1v1h-1zM13,19h1v1h-1zM14,19h1v1h-1zM16,19h1v1h-1zM22,19h1v1h-1zM25,19h1v1h-1zM26,19h1v1h-1zM28,19h1v1h-1zM29,19h1v1h-1zM30,19h1v1h-1zM0,20h1v1h-1zM1,20h1v1h-1zM2,20h1v1h-1zM4,20h1v1h-1zM5,20h1v1h-1zM6,20h1v1h-1zM7,20h1v1h-1zM8,20h1v1h-1zM13,20h1v1h-1zM14,20h1v1h-1zM15,20h1v1h-1zM16,20h1v1h-1zM18,20h1v1h-1zM19,20h1v1h-1zM21,20h1v1h-1zM22,20h1v1h-1zM23,20h1v1h-1zM27,20h1v1h-1zM29,20h1v1h-1zM32,20h1v1h-1zM0,21h1v1h-1zM1,21h1v1h-1zM3,21h1v1h-1zM7,21h1v1h-1zM10,21h1v1h-1zM12,21h1v1h-1zM14,21h1v1h-1zM17,21h1v1h-1zM21,21h1v1h-1zM23,21h1v1h-1zM28,21h1v1h-1zM29,21h1v1h-1zM30,21h1v1h-1zM0,22h1v1h-1zM5,22h1v1h-1zM6,22h1v1h-1zM7,22h1v1h-1zM9,22h1v1h-1zM11,22h1v1h-1zM12,22h1v1h-1zM17,22h1v1h-1zM18,22h1v1h-1zM19,22h1v1h-1zM20,22h1v1h-1zM21,22h1v1h-1zM23,22h1v1h-1zM25,22h1v1h-1zM26,22h1v1h-1zM28,22h1v1h-1zM30,22h1v1h-1zM31,22h1v1h-1zM32,22h1v1h-1zM0,23h1v1h-1zM2,23h1v1h-1zM3,23h1v1h-1zM7,23h1v1h-1zM8,23h1v1h-1zM10,23h1v1h-1zM12,23h1v1h-1zM13,23h1v1h-1zM14,23h1v1h-1zM15,23h1v1h-1zM17,23h1v1h-1zM19,23h1v1h-1zM20,23h1v1h-1zM23,23h1v1h-1zM28,23h1v1h-1zM30,23h1v1h-1zM31,23h1v1h-1zM0,24h1v1h-1zM1,24h1v1h-1zM4,24h1v1h-1zM5,24h1v1h-1zM6,24h1v1h-1zM7,24h1v1h-1zM8,24h1v1h-1zM9,24h1v1h-1zM23,24h1v1h-1zM24,24h1v1h-1zM25,24h1v1h-1zM26,24h1v1h-1zM27,24h1v1h-1zM28,24h1v1h-1zM8,25h1v1h-1zM10,25h1v1h-1zM11,25h1v1h-1zM14,25h1v1h-1zM15,25h1v1h-1zM16,25h1v1h-1zM17,25h1v1h-1zM21,25h1v1h-1zM24,25h1v1h-1zM28,25h1v1h-1zM30,25h1v1h-1zM31,25h1v1h-1zM0,26h1v1h-1zM1,26h1v1h-1zM2,26h1v1h-1zM3,26h1v1h-1zM4,26h1v1h-1zM5,26h1v1h-1zM6,26h1v1h-1zM8,26h1v1h-1zM9,26h1v1h-1zM10,26h1v1h-1zM11,26h1v1h-1zM12,26h1v1h-1zM15,26h1v1h-1zM16,26h1v1h-1zM17,26h1v1h-1zM19,26h1v1h-1zM20,26h1v1h-1zM23,26h1v1h-1zM24,26h1v1h-1zM26,26h1v1h-1zM28,26h1v1h-1zM30,26h1v1h-1zM31,26h1v1h-1zM0,27h1v1h-1zM6,27h1v1h-1zM8,27h1v1h-1zM9,27h1v1h-1zM10,27h1v1h-1zM14,27h1v1h-1zM16,27h1v1h-1zM17,27h1v1h-1zM18,27h1v1h-1zM21,27h1v1h-1zM22,27h1v1h-1zM23,27h1v1h-1zM24,27h1v1h-1zM28,27h1v1h-1zM29,27h1v1h-1zM30,27h1v1h-1zM31,27h1v1h-1zM0,28h1v1h-1zM2,28h1v1h-1zM3,28h1v1h-1zM4,28h1v1h-1zM6,28h1v1h-1zM8,28h1v1h-1zM9,28h1v1h-1zM11,28h1v1h-1zM12,28h1v1h-1zM13,28h1v1h-1zM14,28h1v1h-1zM16,28h1v1h-1zM17,28h1v1h-1zM21,28h1v1h-1zM22,28h1v1h-1zM23,28h1v1h-1zM24,28h1v1h-1zM25,28h1v1h-1zM26,28h1v1h-1zM27,28h1v1h-1zM28,28h1v1h-1zM31,28h1v1h-1zM0,29h1v1h-1zM2,29h1v1h-1zM3,29h1v1h-1zM4,29h1v1h-1zM6,29h1v1h-1zM8,29h1v1h-1zM10,29h1v1h-1zM11,29h1v1h-1zM12,29h1v1h-1zM13,29h1v1h-1zM14,29h1v1h-1zM16,29h1v1h-1zM17,29h1v1h-1zM18,29h1v1h-1zM22,29h1v1h-1zM25,29h1v1h-1zM27,29h1v1h-1zM29,29h1v1h-1zM30,29h1v1h-1zM32,29h1v1h-1zM0,30h1v1h-1zM2,30h1v1h-1zM3,30h1v1h-1zM4,30h1v1h-1zM6,30h1v1h-1zM9,30h1v1h-1zM10,30h1v1h-1zM11,30h1v1h-1zM14,30h1v1h-1zM15,30h1v1h-1zM17,30h1v1h-1zM19,30h1v1h-1zM22,30h1v1h-1zM25,30h1v1h-1zM27,30h1v1h-1zM28,30h1v1h-1zM29,30h1v1h-1zM31,30h1v1h-1zM32,30h1v1h-1zM0,31h1v1h-1zM6,31h1v1h-1zM9,31h1v1h-1zM10,31h1v1h-1zM11,31h1v1h-1zM12,31h1v1h-1zM18,31h1v1h-1zM19,31h1v1h-1zM20,31h1v1h-1zM22,31h1v1h-1zM25,31h1v1h-1zM26,31h1v1h-1zM27,31h1v1h-1zM28,31h1v1h-1zM29,31h1v1h-1zM30,31h1v1h-1zM31,31h1v1h-1zM32,31h1v1h-1zM0,32h1v1h-1zM1,32h1v1h-1zM2,32h1v1h-1zM3,32h1v1h-1zM4,32h1v1h-1zM5,32h1v1h-1zM6,32h1v1h-1zM8,32h1v1h-1zM9,32h1v1h-1zM10,32h1v1h-1zM12,32h1v1h-1zM14,32h1v1h-1zM15,32h1v1h-1zM16,32h1v1h-1zM17,32h1v1h-1zM19,32h1v1h-1zM23,32h1v1h-1zM24,32h1v1h-1zM25,32h1v1h-1zM26,32h1v1h-1zM27,32h1v1h-1zM28,32h1v1h-1zM29,32h1v1h-1z"/></svg>
+      <h3>Partage sans compte</h3>
+      <p>Envoie un lien ou montre un QR code : tes camarades sur le même Wi-Fi rejoignent l'espace depuis leur navigateur, même sur téléphone.</p>
+      <p>Tu choisis qui peut lire, commenter, publier ou modérer.</p>
+    </aside>
+  </section>
+
+  <section>
+    <div class="ai">
+      <div>
+        <h2>Un assistant IA, seulement si tu veux</h2>
+        <p>Avec ta propre clé, l'assistant range tes cours dans ton vault Obsidian, tes dossiers de notes et tes espaces. Il n'a aucun moyen de supprimer quoi que ce soit, et chaque demande s'annule d'un clic.</p>
+        <p>Sans clé, l'app fonctionne entièrement.</p>
+      </div>
+      <ul class="providers" aria-label="Fournisseurs d'IA compatibles">
+        <li class="reco">Claude</li><li>ChatGPT</li><li>Gemini</li><li>Mistral</li><li>DeepSeek</li><li>Grok</li><li>Groq</li><li>OpenRouter</li><li>Ollama en local</li><li>Toute API compatible OpenAI</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="privacy">
+    <h2>Tout reste sur ton Mac</h2>
+    <div>
+      <p>Ta session Inside, tes espaces, ton classement des cours et ta clé d'IA éventuelle sont gardés dans <span class="path">~/Library/Application Support/Cours Albert Sync</span>, lisibles par toi seul.</p>
+      <p><b>Aucun compte, aucune clé, aucun mot de passe n'est intégré à l'app.</b> Un ami qui la télécharge part de zéro et met sa propre clé s'il le souhaite.</p>
+      <p>Le vault Obsidian et Google Drive pour ordinateur sont facultatifs.</p>
+    </div>
+  </section>
+
+  <section class="install" id="installer">
+    <div>
+      <h2>Installer Cours Albert</h2>
+      <ol>
+        <li><div><b>Télécharge l'app</b><span>Le fichier <a href="https://github.com/tomabanicevic/cours-albert/releases/latest/download/Cours-Albert-3.3.2-macOS.zip">Cours-Albert-3.3.2-macOS.zip</a>, ou toutes les versions dans les <a href="https://github.com/tomabanicevic/cours-albert/releases">releases</a>.</span></div></li>
+        <li><div><b>Glisse-la dans Applications</b><span>Double-clique sur le zip pour le décompresser, puis dépose Cours Albert dans le dossier Applications.</span></div></li>
+        <li><div><b>Autorise-la une fois</b><span>L'app n'est pas notarisée par Apple. Au premier lancement, va dans Réglages Système, Confidentialité et sécurité, puis clique sur « Ouvrir quand même ».</span></div></li>
+        <li><div><b>Choisis tes dossiers</b><span>L'écran de bienvenue te demande où ranger tes cours, puis ouvre Chrome une seule fois pour te connecter à Inside.</span></div></li>
+      </ol>
+    </div>
+    <div class="box">
+      <h3>Si macOS dit que l'app est endommagée</h3>
+      <p>Retire la quarantaine dans le Terminal :</p>
+      <pre>xattr -dr com.apple.quarantine "/Applications/Cours Albert.app"</pre>
+      <h3>Compiler toi-même</h3>
+      <p>Il faut les outils en ligne de commande de Xcode et Node.js pour installer les dépendances.</p>
+      <pre>git clone https://github.com/tomabanicevic/cours-albert
+cd cours-albert/src && npm install && cd ..
+bash build.sh</pre>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Cours Albert 3.3, outil étudiant non officiel, sous licence MIT. Fait par Toma.</span>
+    <a href="https://github.com/tomabanicevic/cours-albert">github.com/tomabanicevic/cours-albert</a>
+  </div>
+</footer>
+</body>
+</html>
