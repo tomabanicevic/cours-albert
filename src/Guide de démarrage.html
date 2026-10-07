@@ -1,0 +1,36 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cours Albert 3.0 — guide</title><style>
+:root{color-scheme:light dark;--bg:#f2f5fa;--card:#fff;--text:#172c49;--soft:#4b5b73;--code:#e9f0fa;--accent:#1a5fd0}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1c1f;--card:#26262a;--text:#f3f4f6;--soft:#b4b9c3;--code:#34343a;--accent:#6aa1ff}}
+body{font:16px/1.6 -apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);margin:0}.wrap{max-width:780px;margin:44px auto;padding:0 24px}
+header{background:linear-gradient(135deg,#0b2045,#1256ba);color:#fff;padding:36px;border-radius:22px}h1{font-size:32px;margin:0 0 6px}h2{font-size:20px;margin:0 0 8px}
+.card{background:var(--card);border-radius:18px;padding:24px 30px;margin-top:18px;box-shadow:0 8px 28px #17375b12}p,li{color:var(--soft)}li{margin:8px 0}b{color:var(--text)}
+code{background:var(--code);padding:2px 6px;border-radius:5px;font-size:14px}kbd{border:1px solid #8886;border-radius:5px;padding:0 6px;font:13px -apple-system}a{color:var(--accent)}
+</style></head><body><div class="wrap">
+<header><h1>Cours Albert <small>3.0</small></h1><p>Des espaces collaboratifs pour travailler à plusieurs, et vos cours, votre emploi du temps, vos examens et votre présence d’Albert School, sur votre Mac.</p></header>
+<div class="card"><h2>Première installation</h2><ol>
+<li>Glissez « Cours Albert » dans Applications, puis ouvrez-le (au premier lancement, macOS peut demander de l’autoriser dans Réglages Système › Confidentialité et sécurité).</li>
+<li>Les espaces fonctionnent tout de suite, sans configuration. Pour la partie Albert School, ouvrez le dossier <b>Albert School</b> dans la barre latérale : choisissez votre bibliothèque de cours (un dossier normal ou un dossier de votre vault Obsidian) et un dossier sur le Bureau.</li>
+<li>Installez <a href="https://www.google.com/chrome/">Google Chrome</a> et, si vous voulez vos fichiers Drive, <a href="https://www.google.com/drive/download/">Google Drive pour ordinateur</a>. Ajoutez les dossiers de cours de « Mon Drive ».</li>
+<li>Cliquez sur « Installer et connecter Inside » : une fenêtre Chrome s’ouvre une seule fois pour vous connecter avec Google. Ensuite, tout se fait en arrière-plan.</li>
+</ol></div>
+<div class="card"><h2>Espaces collaboratifs</h2><ul>
+<li><b>Nouveau tableau</b> <kbd>⌘N</kbd> : un mur de publications (texte, LaTeX, images, vidéos, fichiers, liens, dessins, audio, sondages…). Changez de disposition à tout moment : mur, colonnes, grille, tableau, flux, chronologie, carte du monde ou disposition libre avec des flèches.</li>
+<li><b>Nouvel espace libre</b> <kbd>⇧⌘N</kbd> : un tableau blanc en cartes, pour dessiner, écrire, coller des notes, relier des idées ou créer un quiz dont les réponses mènent à d’autres cartes. Modes Création, Interaction et Présentation.</li>
+<li><b>Modèles</b> : brainstorming, Kanban, projet de recherche, portfolio, chronologie, révision d’examen, quiz, carte mentale, travail en groupes…</li>
+<li><b>Réglages de l’espace</b> (roue dentée) : apparence, sections, champs personnalisés, réactions, modération, tri, programmation des publications.</li>
+<li><b>Exporter</b> : PDF, image, CSV, Excel, ZIP des fichiers ou sauvegarde <code>.coursalbert</code> à réimporter (double-clic dans le Finder).</li>
+</ul></div>
+<div class="card"><h2>Partager un espace</h2><p>Bouton <b>Partager</b> : choisissez qui voit l’espace et ce que chacun peut faire (lire, commenter, déposer, publier, modérer), puis donnez le lien ou faites scanner le QR code. Les invités n’ont pas besoin de compte : ils indiquent seulement leur nom. Tout apparaît en direct chez chacun.</p>
+<p>Les espaces sont servis par votre Mac : les invités doivent être sur le <b>même réseau Wi-Fi</b>, et Cours Albert doit rester ouvert (ou dans la barre des menus). Au premier partage, macOS peut demander d’autoriser les connexions entrantes et l’accès au réseau local : acceptez. Sur les réseaux d’école qui isolent les appareils, utilisez un partage de connexion.</p></div>
+<div class="card"><h2>Albert School</h2><ul>
+<li><b>Aujourd’hui</b>, <b>Emploi du temps</b> (export vers Calendrier), <b>Examens</b>, <b>Présence</b> (seuil de 85 %) et <b>Synchronisation</b>, lus sur Inside Albert.</li>
+<li><b>Cours</b> : dans chaque cours, les supports sont rangés par catégorie et dans l’ordre (TD1 avant TD2, le corrigé juste après son sujet). Glissez un fichier pour changer son ordre ou sa catégorie ; « Trier automatiquement » revient au classement d’origine. Les fichiers « À classer » reçoivent une suggestion de cours.</li>
+<li><b>Notes et fichiers texte</b> : cliquez sur une note <code>.md</code> pour la lire (encadrés, liens <code>[[…]]</code>, formules LaTeX) et la modifier. Depuis le Finder : « Ouvrir avec › Cours Albert », ou Fichier › Ouvrir <kbd>⌘O</kbd>.</li>
+<li><b>Recherche</b> <kbd>⌘K</kbd> : un espace, une publication, un cours, un fichier, un examen ou une séance.</li>
+</ul></div>
+<div class="card"><h2>Tri par IA (facultatif)</h2><p>L’app n’a pas besoin d’IA. Si vous voulez de l’aide pour ranger les fichiers « À classer » ou les publications d’un tableau, choisissez votre IA dans Réglages › IA (Claude, ChatGPT, Gemini, Mistral, DeepSeek, Grok, OpenRouter, ou un modèle local avec Ollama) et ajoutez <b>votre propre clé</b>. Elle est enregistrée uniquement sur ce Mac, jamais dans l’app ni dans les espaces partagés : si vous envoyez l’app à quelqu’un, il ne reçoit pas votre clé.</p></div>
+<div class="card"><h2>Automatisation et notifications</h2><p>L’app vérifie Inside, Drive et le Bureau chaque heure, même fermée, tant que le Mac est allumé. Elle peut afficher le prochain cours dans la barre des menus, rappeler chaque cours quelques minutes avant, prévenir la veille d’un examen, signaler un nouveau support, un examen déplacé, un changement de salle ou une absence, et annoncer les nouvelles publications dans vos espaces. Tout se règle dans Réglages.</p>
+<p>Si la session Inside expire, un bandeau propose « Se reconnecter ».</p></div>
+<div class="card"><h2>Google Drive</h2><p>Le dossier <code>Cours</code> est échangé dans les deux sens avec <code>Mon Drive/Cours Albert</code>. Si un fichier change des deux côtés entre deux vérifications, les deux versions sont gardées avec « conflit » dans leur nom. L’app ne supprime jamais de fichier. Les dossiers « Partagés avec moi » doivent être ajoutés à « Mon Drive » comme raccourcis.</p></div>
+<div class="card"><h2>Confidentialité</h2><p>Tout reste sur votre Mac, dans <code>~/Library/Application Support/Cours Albert Sync</code> : configuration, session Inside, espaces et fichiers déposés, ordre des cours, clé API éventuelle. Aucun compte, mot de passe ni clé n’est intégré à l’app. La caméra et le micro ne sont utilisés que lorsque vous enregistrez vous-même une photo, une vidéo ou un message audio. Cours Albert est un outil étudiant, non officiel.</p></div>
+</div></body></html>

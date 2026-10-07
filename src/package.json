@@ -1,0 +1,11 @@
+{
+  "name": "cours-albert-sync",
+  "version": "3.3.2",
+  "private": true,
+  "type": "module",
+  "description": "Moteur local de l’application Cours Albert",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "playwright": "1.62.1"
+  }
+}

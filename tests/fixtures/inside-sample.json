@@ -1,0 +1,1689 @@
+{
+ "now": "2026-09-24T12:30:00.000Z",
+ "student": "Alex",
+ "schedule": [
+  {
+   "start": "2026-09-09T16:00:00.000Z",
+   "range": "18:00–18:45",
+   "href": "/me/grades",
+   "title": "Back-to-school Test",
+   "code": "",
+   "badge": "Exam",
+   "leaves": [
+    "18:00–18:45",
+    "Exam",
+    "Back-to-school Test"
+   ]
+  },
+  {
+   "start": "2026-09-14T09:30:00.000Z",
+   "range": "11:30–13:30",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "11:30–13:30",
+    "Foundations",
+    "MAT11-1",
+    "SQUARE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-14T12:00:00.000Z",
+   "range": "14:00–17:00",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "14:00–17:00",
+    "BDD I",
+    "BUS13-5",
+    "Auditorium",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-15T07:45:00.000Z",
+   "range": "09:45–11:45",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "09:45–11:45",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-15T10:00:00.000Z",
+   "range": "12:00–14:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "12:00–14:00",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-15T16:00:00.000Z",
+   "range": "18:00–19:30",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "18:00–19:30",
+    "BDD I",
+    "BUS13-5",
+    "Room to confirm",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-16T06:00:00.000Z",
+   "range": "08:00–10:15",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:15",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-16T10:30:00.000Z",
+   "range": "12:30–14:30",
+   "href": "/courses/98645bc0-1d0e-4101-ab2a-46cd3d0c6a21",
+   "title": "Financial Accounting & Statements",
+   "code": "BUS13-3",
+   "badge": "",
+   "leaves": [
+    "12:30–14:30",
+    "Financial Accounting & Statements",
+    "BUS13-3",
+    "CIRCLE Room",
+    "Hugo Bernard"
+   ]
+  },
+  {
+   "start": "2026-09-16T12:45:00.000Z",
+   "range": "14:45–16:45",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "14:45–16:45",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-16T16:00:00.000Z",
+   "range": "18:00–19:30",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "18:00–19:30",
+    "BDD I",
+    "BUS13-5",
+    "Room to confirm",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-17T06:00:00.000Z",
+   "range": "08:00–09:55",
+   "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373",
+   "title": "Marketing Fundamentals",
+   "code": "BUS13-1",
+   "badge": "",
+   "leaves": [
+    "08:00–09:55",
+    "Marketing Fundamentals",
+    "BUS13-1",
+    "STAR Room"
+   ]
+  },
+  {
+   "start": "2026-09-17T08:15:00.000Z",
+   "range": "10:15–12:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "10:15–12:00",
+    "Foundations",
+    "MAT11-1",
+    "STAR Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-17T10:15:00.000Z",
+   "range": "12:15–14:00",
+   "href": "/courses/2aa9d514-70e6-47ad-8c20-479ae853cfb9",
+   "title": "Microeconomics",
+   "code": "BUS13-4",
+   "badge": "",
+   "leaves": [
+    "12:15–14:00",
+    "Microeconomics",
+    "BUS13-4",
+    "STAR Room",
+    "Marc Petit"
+   ]
+  },
+  {
+   "start": "2026-09-18T06:30:00.000Z",
+   "range": "08:30–10:30",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "08:30–10:30",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-18T09:00:00.000Z",
+   "range": "11:00–15:00",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "11:00–15:00",
+    "BDD I",
+    "BUS13-5",
+    "CIRCLE Room",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-21T06:00:00.000Z",
+   "range": "08:00–10:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:00",
+    "Foundations",
+    "MAT11-1",
+    "SQUARE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-21T16:00:00.000Z",
+   "range": "18:00–19:30",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "18:00–19:30",
+    "BDD I",
+    "BUS13-5",
+    "Room to confirm",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-22T08:45:00.000Z",
+   "range": "10:45–13:15",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "10:45–13:15",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-22T16:00:00.000Z",
+   "range": "18:00–19:30",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "18:00–19:30",
+    "BDD I",
+    "BUS13-5",
+    "Room to confirm",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-23T06:00:00.000Z",
+   "range": "08:00–10:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:00",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-23T08:15:00.000Z",
+   "range": "10:15–12:00",
+   "href": "/courses/84992053-72d4-411e-8f53-3c45bdcb5363",
+   "title": "Career Workshop I",
+   "code": "HUM14-2",
+   "badge": "",
+   "leaves": [
+    "10:15–12:00",
+    "Career Workshop I",
+    "HUM14-2",
+    "CIRCLE Room",
+    "Julien Roux"
+   ]
+  },
+  {
+   "start": "2026-09-23T10:30:00.000Z",
+   "range": "12:30–14:30",
+   "href": "/courses/98645bc0-1d0e-4101-ab2a-46cd3d0c6a21",
+   "title": "Financial Accounting & Statements",
+   "code": "BUS13-3",
+   "badge": "",
+   "leaves": [
+    "12:30–14:30",
+    "Financial Accounting & Statements",
+    "BUS13-3",
+    "CIRCLE Room",
+    "Hugo Bernard"
+   ]
+  },
+  {
+   "start": "2026-09-23T13:00:00.000Z",
+   "range": "15:00–17:00",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "15:00–17:00",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-24T06:00:00.000Z",
+   "range": "08:00–10:00",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:00",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "STAR Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-24T08:20:00.000Z",
+   "range": "10:20–11:50",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "10:20–11:50",
+    "Foundations",
+    "MAT11-1",
+    "STAR Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-24T10:10:00.000Z",
+   "range": "12:10–14:00",
+   "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373",
+   "title": "Marketing Fundamentals",
+   "code": "BUS13-1",
+   "badge": "",
+   "leaves": [
+    "12:10–14:00",
+    "Marketing Fundamentals",
+    "BUS13-1",
+    "STAR Room"
+   ]
+  },
+  {
+   "start": "2026-09-25T06:30:00.000Z",
+   "range": "08:30–10:30",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "08:30–10:30",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-25T09:00:00.000Z",
+   "range": "11:00–15:00",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "11:00–15:00",
+    "BDD I",
+    "BUS13-5",
+    "CIRCLE Room",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-09-25T13:00:00.000Z",
+   "range": "15:00–17:00",
+   "href": "/courses/eaaef978-2822-4f19-8974-b835d64f5a29",
+   "title": "Designing Operations from Scratch",
+   "code": "BUS13-2",
+   "badge": "",
+   "leaves": [
+    "15:00–17:00",
+    "Designing Operations from Scratch",
+    "BUS13-2",
+    "CIRCLE Room",
+    "Sofia Garnier"
+   ]
+  },
+  {
+   "start": "2026-09-28T09:05:00.000Z",
+   "range": "11:05–11:35",
+   "href": "/me/grades",
+   "title": "MCQ",
+   "code": "",
+   "badge": "Exam",
+   "leaves": [
+    "11:05–11:35",
+    "Exam",
+    "MCQ"
+   ]
+  },
+  {
+   "start": "2026-09-28T10:30:00.000Z",
+   "range": "12:30–13:00",
+   "href": "/me/grades",
+   "title": "Intermediary exam",
+   "code": "",
+   "badge": "Exam",
+   "leaves": [
+    "12:30–13:00",
+    "Exam",
+    "Intermediary exam"
+   ]
+  },
+  {
+   "start": "2026-09-28T12:00:00.000Z",
+   "range": "14:00–17:00",
+   "href": "/courses/bb5b6e27-ba57-41e1-9bd3-a540fbfcf5a3",
+   "title": "Philosophy I — The Examined Life",
+   "code": "HUM14-3",
+   "badge": "",
+   "leaves": [
+    "14:00–17:00",
+    "Philosophy I — The Examined Life",
+    "HUM14-3",
+    "SQUARE Room",
+    "Léa Fontaine"
+   ]
+  },
+  {
+   "start": "2026-09-29T07:00:00.000Z",
+   "range": "09:00–11:00",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "09:00–11:00",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-09-29T09:15:00.000Z",
+   "range": "11:15–13:30",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "11:15–13:30",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-30T06:00:00.000Z",
+   "range": "08:00–10:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:00",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-09-30T10:30:00.000Z",
+   "range": "12:30–14:30",
+   "href": "/courses/98645bc0-1d0e-4101-ab2a-46cd3d0c6a21",
+   "title": "Financial Accounting & Statements",
+   "code": "BUS13-3",
+   "badge": "",
+   "leaves": [
+    "12:30–14:30",
+    "Financial Accounting & Statements",
+    "BUS13-3",
+    "CIRCLE Room",
+    "Hugo Bernard"
+   ]
+  },
+  {
+   "start": "2026-09-30T13:00:00.000Z",
+   "range": "15:00–17:00",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe",
+   "title": "Introduction to Data with Spreadsheet",
+   "code": "DAT12-1",
+   "badge": "",
+   "leaves": [
+    "15:00–17:00",
+    "Introduction to Data with Spreadsheet",
+    "DAT12-1",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-10-01T06:00:00.000Z",
+   "range": "08:00–09:55",
+   "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373",
+   "title": "Marketing Fundamentals",
+   "code": "BUS13-1",
+   "badge": "",
+   "leaves": [
+    "08:00–09:55",
+    "Marketing Fundamentals",
+    "BUS13-1",
+    "STAR Room"
+   ]
+  },
+  {
+   "start": "2026-10-01T08:15:00.000Z",
+   "range": "10:15–12:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "10:15–12:00",
+    "Foundations",
+    "MAT11-1",
+    "STAR Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-10-01T10:15:00.000Z",
+   "range": "12:15–14:00",
+   "href": "/courses/2aa9d514-70e6-47ad-8c20-479ae853cfb9",
+   "title": "Microeconomics",
+   "code": "BUS13-4",
+   "badge": "",
+   "leaves": [
+    "12:15–14:00",
+    "Microeconomics",
+    "BUS13-4",
+    "STAR Room",
+    "Marc Petit"
+   ]
+  },
+  {
+   "start": "2026-10-02T06:30:00.000Z",
+   "range": "08:30–10:30",
+   "href": "/courses/56d01f8c-5bc1-4e4f-ba4e-dcecb4a2a113",
+   "title": "Programming in Python",
+   "code": "DAT12-2",
+   "badge": "",
+   "leaves": [
+    "08:30–10:30",
+    "Programming in Python",
+    "DAT12-2",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-10-02T09:00:00.000Z",
+   "range": "11:00–15:00",
+   "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b",
+   "title": "BDD I",
+   "code": "BUS13-5",
+   "badge": "",
+   "leaves": [
+    "11:00–15:00",
+    "BDD I",
+    "BUS13-5",
+    "CIRCLE Room",
+    "Paul Durand"
+   ]
+  },
+  {
+   "start": "2026-10-02T09:00:00.000Z",
+   "range": "11:00",
+   "href": "/me/grades",
+   "title": "Project 1",
+   "code": "",
+   "badge": "Exam",
+   "leaves": [
+    "11:00",
+    "Exam",
+    "Project 1"
+   ]
+  },
+  {
+   "start": "2026-10-02T13:00:00.000Z",
+   "range": "15:00–17:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "15:00–17:00",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-10-05T06:00:00.000Z",
+   "range": "08:00–10:00",
+   "href": "/courses/cf40994c-e19b-4a4c-a964-4d40067605a4",
+   "title": "Geopolitics I",
+   "code": "HUM14-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:00",
+    "Geopolitics I",
+    "HUM14-1",
+    "SQUARE Room",
+    "Nadia Lefèvre"
+   ]
+  },
+  {
+   "start": "2026-10-05T12:00:00.000Z",
+   "range": "14:00–17:00",
+   "href": "/courses/bb5b6e27-ba57-41e1-9bd3-a540fbfcf5a3",
+   "title": "Philosophy I — The Examined Life",
+   "code": "HUM14-3",
+   "badge": "",
+   "leaves": [
+    "14:00–17:00",
+    "Philosophy I — The Examined Life",
+    "HUM14-3",
+    "EXT+",
+    "Léa Fontaine"
+   ]
+  },
+  {
+   "start": "2026-10-06T07:00:00.000Z",
+   "range": "09:00–11:00",
+   "href": "/courses/56d01f8c-5bc1-4e4f-ba4e-dcecb4a2a113",
+   "title": "Programming in Python",
+   "code": "DAT12-2",
+   "badge": "",
+   "leaves": [
+    "09:00–11:00",
+    "Programming in Python",
+    "DAT12-2",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  },
+  {
+   "start": "2026-10-06T09:15:00.000Z",
+   "range": "11:15–13:15",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "11:15–13:15",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-10-07T06:00:00.000Z",
+   "range": "08:00–10:00",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f",
+   "title": "Foundations",
+   "code": "MAT11-1",
+   "badge": "",
+   "leaves": [
+    "08:00–10:00",
+    "Foundations",
+    "MAT11-1",
+    "CIRCLE Room",
+    "Claire Martin"
+   ]
+  },
+  {
+   "start": "2026-10-07T08:15:00.000Z",
+   "range": "10:15–12:00",
+   "href": "/courses/84992053-72d4-411e-8f53-3c45bdcb5363",
+   "title": "Career Workshop I",
+   "code": "HUM14-2",
+   "badge": "",
+   "leaves": [
+    "10:15–12:00",
+    "Career Workshop I",
+    "HUM14-2",
+    "CIRCLE Room",
+    "Julien Roux"
+   ]
+  },
+  {
+   "start": "2026-10-07T10:45:00.000Z",
+   "range": "12:45–14:45",
+   "href": "/courses/98645bc0-1d0e-4101-ab2a-46cd3d0c6a21",
+   "title": "Financial Accounting & Statements",
+   "code": "BUS13-3",
+   "badge": "",
+   "leaves": [
+    "12:45–14:45",
+    "Financial Accounting & Statements",
+    "BUS13-3",
+    "CIRCLE Room",
+    "Hugo Bernard"
+   ]
+  },
+  {
+   "start": "2026-10-07T13:00:00.000Z",
+   "range": "15:00–17:00",
+   "href": "/courses/56d01f8c-5bc1-4e4f-ba4e-dcecb4a2a113",
+   "title": "Programming in Python",
+   "code": "DAT12-2",
+   "badge": "",
+   "leaves": [
+    "15:00–17:00",
+    "Programming in Python",
+    "DAT12-2",
+    "CIRCLE Room",
+    "Inès Moreau"
+   ]
+  }
+ ],
+ "exams": [
+  {
+   "Exam": [
+    "Written exam with AI phase",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-2",
+    "Designing Operations from Scratch"
+   ],
+   "Date": [
+    "Jan 14, 2027, 02:00 PM",
+    "ends Jan 14, 2027, 04:00 PM"
+   ],
+   "Duration": [
+    "120 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "50"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-4",
+    "Microeconomics"
+   ],
+   "Date": [
+    "Jan 14, 2027, 10:00 AM",
+    "ends Jan 14, 2027, 12:00 PM"
+   ],
+   "Duration": [
+    "120 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "50"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-1",
+    "Marketing Fundamentals"
+   ],
+   "Date": [
+    "Jan 13, 2027, 02:00 PM",
+    "ends Jan 13, 2027, 04:00 PM"
+   ],
+   "Duration": [
+    "120 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "50"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-3",
+    "Pandas I"
+   ],
+   "Date": [
+    "Jan 13, 2027, 10:35 AM",
+    "ends Jan 13, 2027, 12:05 PM"
+   ],
+   "Duration": [
+    "90 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "60"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-2",
+    "Programming in Python"
+   ],
+   "Date": [
+    "Jan 13, 2027, 09:00 AM",
+    "ends Jan 13, 2027, 10:30 AM"
+   ],
+   "Duration": [
+    "90 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "50"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam with AI phase",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-3",
+    "Linear Algebra I"
+   ],
+   "Date": [
+    "Jan 12, 2027, 02:00 PM",
+    "ends Jan 12, 2027, 04:00 PM"
+   ],
+   "Duration": [
+    "120 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "60"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-3",
+    "Financial Accounting & Statements"
+   ],
+   "Date": [
+    "Jan 12, 2027, 10:00 AM",
+    "ends Jan 12, 2027, 12:00 PM"
+   ],
+   "Duration": [
+    "120 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "50"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-5",
+    "Descriptive Statistics & Data Reasoning"
+   ],
+   "Date": [
+    "Jan 11, 2027, 10:35 AM",
+    "ends Jan 11, 2027, 12:05 PM"
+   ],
+   "Duration": [
+    "90 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "75"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Final exam",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-1",
+    "Foundations"
+   ],
+   "Date": [
+    "Jan 11, 2027, 09:30 AM",
+    "ends Jan 11, 2027, 11:30 AM"
+   ],
+   "Duration": [
+    "120 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "50"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Oral check point",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-4",
+    "Microeconomics"
+   ],
+   "Date": [
+    "Dec 18, 2026, 08:00 PM",
+    "ends Dec 18, 2026, 08:00 PM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Project 4",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-5",
+    "BDD I"
+   ],
+   "Date": [
+    "Dec 18, 2026, 02:50 PM",
+    "ends Dec 18, 2026, 02:50 PM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-3",
+    "Pandas I"
+   ],
+   "Date": [
+    "Dec 14, 2026, 10:35 AM",
+    "ends Dec 14, 2026, 11:35 AM"
+   ],
+   "Duration": [
+    "60 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "40"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-5",
+    "Descriptive Statistics & Data Reasoning"
+   ],
+   "Date": [
+    "Dec 14, 2026, 09:30 AM",
+    "ends Dec 14, 2026, 10:30 AM"
+   ],
+   "Duration": [
+    "60 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Oral check point",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-1",
+    "Marketing Fundamentals"
+   ],
+   "Date": [
+    "Dec 7, 2026, 03:17 PM",
+    "ends Dec 7, 2026, 03:37 PM"
+   ],
+   "Duration": [
+    "20 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Oral check point",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-3",
+    "Financial Accounting & Statements"
+   ],
+   "Date": [
+    "Dec 4, 2026, 04:00 PM",
+    "ends Dec 4, 2026, 04:00 PM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "MCQ",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-4",
+    "Microeconomics"
+   ],
+   "Date": [
+    "Nov 30, 2026, 11:05 AM",
+    "ends Nov 30, 2026, 11:55 AM"
+   ],
+   "Duration": [
+    "50 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-2",
+    "Programming in Python"
+   ],
+   "Date": [
+    "Nov 30, 2026, 10:10 AM",
+    "ends Nov 30, 2026, 11:00 AM"
+   ],
+   "Duration": [
+    "50 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "30"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-3",
+    "Linear Algebra I"
+   ],
+   "Date": [
+    "Nov 30, 2026, 09:15 AM",
+    "ends Nov 30, 2026, 10:05 AM"
+   ],
+   "Duration": [
+    "50 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Oral check point",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-2",
+    "Designing Operations from Scratch"
+   ],
+   "Date": [
+    "Nov 27, 2026, 04:00 PM",
+    "ends Nov 27, 2026, 04:00 PM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Project 3",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-5",
+    "BDD I"
+   ],
+   "Date": [
+    "Nov 27, 2026, 10:00 AM",
+    "ends Nov 27, 2026, 10:00 AM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "MCQ",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-3",
+    "Financial Accounting & Statements"
+   ],
+   "Date": [
+    "Nov 23, 2026, 09:15 AM",
+    "ends Nov 23, 2026, 10:15 AM"
+   ],
+   "Duration": [
+    "60 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "MCQ",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-2",
+    "Designing Operations from Scratch"
+   ],
+   "Date": [
+    "Nov 16, 2026, 10:25 AM",
+    "ends Nov 16, 2026, 11:25 AM"
+   ],
+   "Duration": [
+    "60 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "MCQ",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-2",
+    "Programming in Python"
+   ],
+   "Date": [
+    "Nov 16, 2026, 09:50 AM",
+    "ends Nov 16, 2026, 10:20 AM"
+   ],
+   "Duration": [
+    "30 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "20"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Written exam",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-3",
+    "Linear Algebra I"
+   ],
+   "Date": [
+    "Nov 16, 2026, 09:15 AM",
+    "ends Nov 16, 2026, 09:45 AM"
+   ],
+   "Duration": [
+    "30 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "15"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Project 2",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-5",
+    "BDD I"
+   ],
+   "Date": [
+    "Oct 30, 2026, 10:00 AM",
+    "ends Oct 30, 2026, 10:00 AM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Intermediary exam 2",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-1",
+    "Foundations"
+   ],
+   "Date": [
+    "Oct 19, 2026, 11:15 AM",
+    "ends Oct 19, 2026, 12:00 PM"
+   ],
+   "Duration": [
+    "45 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "MCQ",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-1",
+    "Marketing Fundamentals"
+   ],
+   "Date": [
+    "Oct 19, 2026, 11:00 AM",
+    "ends Oct 19, 2026, 11:45 AM"
+   ],
+   "Duration": [
+    "45 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Final exam",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-1",
+    "Introduction to Data with Spreadsheet"
+   ],
+   "Date": [
+    "Oct 19, 2026, 10:05 AM",
+    "ends Oct 19, 2026, 11:05 AM"
+   ],
+   "Duration": [
+    "60 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "80"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Project 1",
+    "PAPER"
+   ],
+   "Module": [
+    "BUS13-5",
+    "BDD I"
+   ],
+   "Date": [
+    "Oct 2, 2026, 11:00 AM",
+    "ends Oct 2, 2026, 11:00 AM"
+   ],
+   "Duration": [
+    "—"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "25"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Intermediary exam",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-1",
+    "Foundations"
+   ],
+   "Date": [
+    "Sept 28, 2026, 12:30 PM",
+    "ends Sept 28, 2026, 01:00 PM"
+   ],
+   "Duration": [
+    "30 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "15"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "MCQ",
+    "PAPER"
+   ],
+   "Module": [
+    "DAT12-1",
+    "Introduction to Data with Spreadsheet"
+   ],
+   "Date": [
+    "Sept 28, 2026, 11:05 AM",
+    "ends Sept 28, 2026, 11:35 AM"
+   ],
+   "Duration": [
+    "30 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "20"
+   ],
+   "SEB": []
+  },
+  {
+   "Exam": [
+    "Back-to-school Test",
+    "PAPER"
+   ],
+   "Module": [
+    "MAT11-1",
+    "Foundations"
+   ],
+   "Date": [
+    "Sept 9, 2026, 06:00 PM",
+    "ends Sept 9, 2026, 06:45 PM"
+   ],
+   "Duration": [
+    "45 min"
+   ],
+   "Session": [
+    "1st attempt"
+   ],
+   "Coeff": [
+    "10"
+   ],
+   "SEB": []
+  }
+ ],
+ "attendance": {
+  "summary": [
+   {
+    "Course": [
+     "DAT12-1 — Introduction to Data with Spreadsheet"
+    ],
+    "Attended": [
+     "4/5"
+    ],
+    "Where you stand": [
+     "80.0%"
+    ],
+    "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe/attendance"
+   },
+   {
+    "Course": [
+     "BUS13-4 — Microeconomics"
+    ],
+    "Attended": [
+     "1/1"
+    ],
+    "Where you stand": [
+     "100.0%"
+    ],
+    "href": "/courses/2aa9d514-70e6-47ad-8c20-479ae853cfb9/attendance"
+   },
+   {
+    "Course": [
+     "BUS13-5 — BDD I"
+    ],
+    "Attended": [
+     "4/4"
+    ],
+    "Where you stand": [
+     "100.0%"
+    ],
+    "href": "/courses/54ce2927-6919-4e08-8fcd-8ab641dd516b/attendance"
+   },
+   {
+    "Course": [
+     "BUS13-1 — Marketing Fundamentals"
+    ],
+    "Attended": [
+     "2/2"
+    ],
+    "Where you stand": [
+     "100.0%"
+    ],
+    "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373/attendance"
+   },
+   {
+    "Course": [
+     "BUS13-3 — Financial Accounting & Statements"
+    ],
+    "Attended": [
+     "2/2"
+    ],
+    "Where you stand": [
+     "100.0%"
+    ],
+    "href": "/courses/98645bc0-1d0e-4101-ab2a-46cd3d0c6a21/attendance"
+   },
+   {
+    "Course": [
+     "MAT11-1 — Foundations"
+    ],
+    "Attended": [
+     "8/8"
+    ],
+    "Where you stand": [
+     "100.0%"
+    ],
+    "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f/attendance"
+   }
+  ],
+  "other": [
+   {
+    "When": [
+     "Sept 23, 2026 · 08:30 PM–09:30 PM",
+     "Véronique Morali"
+    ],
+    "Status": [
+     "Present"
+    ]
+   }
+  ],
+  "sessions": {
+   "218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe": [
+    [
+     "Sept 24, 2026 · 08:00 AM–10:00 AM",
+     "Absent"
+    ],
+    [
+     "Sept 23, 2026 · 03:00 PM–05:00 PM",
+     "Present"
+    ],
+    [
+     "Sept 18, 2026 · 08:30 AM–10:30 AM",
+     "Present"
+    ],
+    [
+     "Sept 16, 2026 · 02:45 PM–04:45 PM",
+     "Present"
+    ],
+    [
+     "Sept 15, 2026 · 09:45 AM–11:45 AM",
+     "Present"
+    ]
+   ]
+  }
+ },
+ "news": [
+  {
+   "title": "TD3 -- MAT11-1.pdf",
+   "meta": "MAT11-1 — Foundations · New material · Thu 24 Sept, 12:14",
+   "href": "/courses/340a6d3d-c577-46fe-8399-3982462ac46f/content"
+  },
+  {
+   "title": "Gorillas",
+   "meta": "BUS13-1 — Marketing Fundamentals · New material · Thu 24 Sept, 10:57",
+   "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373/content"
+  },
+  {
+   "title": "When choice is demovating",
+   "meta": "BUS13-1 — Marketing Fundamentals · New material · Thu 24 Sept, 10:54",
+   "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373/content"
+  },
+  {
+   "title": "The IKEA effect",
+   "meta": "BUS13-1 — Marketing Fundamentals · New material · Thu 24 Sept, 10:52",
+   "href": "/courses/717464f0-5d7f-45f3-a0ee-ba4c298fe373/content"
+  },
+  {
+   "title": "From data to viz : https://www.data-to-viz.com/",
+   "meta": "DAT12-1 — Introduction to Data with Spreadsheet · Inès Moreau · Wed 23 Sept, 15:31",
+   "href": "/courses/218fa0ff-af78-4ebf-a6bf-1bfa58cd72fe#announcements"
+  },
+  {
+   "title": "A word for the new cohort, and for all of you",
+   "meta": "Gregoire Genest",
+   "datetime": "2026-08-31T10:20:14.796Z",
+   "href": ""
+  }
+ ]
+}

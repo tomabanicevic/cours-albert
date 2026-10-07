@@ -1,0 +1,3 @@
+Carte du monde et villes : Natural Earth (https://www.naturalearthdata.com), domaine public.
+Frontières des pays converties depuis le paquet world-atlas (licence ISC, voir world-atlas.txt).
+Villes : ne_50m_populated_places (Natural Earth, domaine public).

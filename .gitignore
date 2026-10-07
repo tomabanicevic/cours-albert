@@ -1,0 +1,10 @@
+node_modules/
+.build/
+.tools/
+*.dmg
+*.log
+.DS_Store
+ia.json
+config.json
+classement.json
+preferences.json
