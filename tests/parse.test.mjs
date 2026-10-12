@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseDateTime, rangeMinutes, scheduleItem, examRow, attendanceRow, attendanceSession, gradingFromSyllabus, newsItem, parisToISO, parisDay } from '../src/parse.mjs';
+import { parseDateTime, parseShortWhen, rangeMinutes, scheduleItem, examRow, attendanceRow, attendanceSession, gradingFromSyllabus, newsItem, parisToISO, parisDay } from '../src/parse.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const sample = JSON.parse(await fs.readFile(path.join(here, 'fixtures/inside-sample.json'), 'utf8'));
@@ -53,6 +53,16 @@ const s = attendanceSession('Sept 24, 2026 · 08:00 AM–10:00 AM', 'Absent');
 assert.deepEqual([s.start, s.end, s.status], ['2026-09-24T06:00:00.000Z', '2026-09-24T08:00:00.000Z', 'absent']);
 const talk = attendanceSession('Sept 23, 2026 · 08:30 PM–09:30 PM Véronique Morali', 'Present');
 assert.deepEqual([talk.start, talk.label, talk.status], ['2026-09-23T18:30:00.000Z', 'Véronique Morali', 'present']);
+
+// Format Inside d’octobre 2026 : examens sur /me/exams (colonne « When » sans année),
+// présence « 3/3 » découpée en trois morceaux.
+assert.deepEqual(parseShortWhen('14 Jan · 14:00–16:00 ends 16:00 for you', 2026), { start: '2027-01-14T13:00:00.000Z', end: '2027-01-14T15:00:00.000Z' });
+assert.deepEqual(parseShortWhen('2 Oct · 11:00', 2026), { start: '2026-10-02T09:00:00.000Z', end: '2026-10-02T09:00:00.000Z' });
+assert.equal(parseShortWhen('Jan 14, 2027, 02:00 PM', 2026), null, 'une date avec année garde l’ancien format');
+const newExam = examRow({ Exam: ['Final exam', 'On paper'], Module: ['MAT11-1', 'Foundations'], When: ['11 Jan · 08:30–10:30', 'ends', '10:30', 'for you'], Duration: ['120', 'min'], Coeff: ['50'] }, 2026);
+assert.deepEqual([newExam.start, newExam.end, newExam.durationMin, newExam.coeff, newExam.code], ['2027-01-11T07:30:00.000Z', '2027-01-11T09:30:00.000Z', 120, 50, 'MAT11-1']);
+const split = attendanceRow({ Course: ['BUS13-4 — Microeconomics'], Attended: ['3', '/', '3'], 'Where you stand': ['100.0%'] });
+assert.deepEqual([split.code, split.attended, split.total, split.rate], ['BUS13-4', 3, 3, 1]);
 
 // Syllabus.
 const syllabus = await fs.readFile(path.join(here, 'fixtures/syllabus-MAT11-1.md'), 'utf8').catch(() => null);

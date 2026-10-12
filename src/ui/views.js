@@ -173,7 +173,7 @@ function unitBar(u) {
 }
 
 function marginText(m) { return m > 0 ? plural(m, 'absence encore possible', 'absences encore possibles') : m === 0 ? 'Plus aucune absence possible' : `Limite dépassée de ${plural(-m, 'séance')}`; }
-const modeLabel = m => ({ PAPER: 'sur papier', ONLINE: 'en ligne', COMPUTER: 'sur ordinateur', ORAL: 'oral' }[String(m).toUpperCase()] || String(m).toLowerCase());
+const modeLabel = m => ({ PAPER: 'sur papier', 'ON PAPER': 'sur papier', ONLINE: 'en ligne', COMPUTER: 'sur ordinateur', 'ON COMPUTER': 'sur ordinateur', ORAL: 'oral' }[String(m).toUpperCase()] || String(m).toLowerCase());
 const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 
 // ======================= Emploi du temps =======================
@@ -279,7 +279,7 @@ function eventDrawer(e) {
     </dl>
     <div class="actions">
       ${c ? `<button class="btn" data-act="go" data-to="cours/${attr(c.id)}">${I.courses}Supports du cours</button><button class="btn" data-act="reveal-folder" data-path="${attr(c.folder)}">${I.folder}Ouvrir le dossier</button>` : ''}
-      <button class="btn" data-act="url" data-url="${e.kind === 'exam' ? 'https://inside.albertschool.com/me/grades' : `https://inside.albertschool.com/courses/${attr(e.courseId || '')}`}">${I.external}Voir sur Inside</button>
+      <button class="btn" data-act="url" data-url="${e.kind === 'exam' ? 'https://inside.albertschool.com/me/exams' : `https://inside.albertschool.com/courses/${attr(e.courseId || '')}`}">${I.external}Voir sur Inside</button>
     </div>
   </aside>`;
 }
@@ -290,7 +290,7 @@ function viewExams() {
   const t = now().getTime();
   const upcoming = D.upcomingExams();
   const in30 = upcoming.filter(x => Date.parse(x.start) - t <= 30 * DAY).length;
-  let html = pageHead('', 'Examens', all.length ? `${plural(in30, 'examen')} dans les 30 prochains jours · ${plural(all.length, 'épreuve')} ce semestre` : '', `<button class="btn" data-act="url" data-url="https://inside.albertschool.com/me/grades">${I.external}Inside</button>`);
+  let html = pageHead('', 'Examens', all.length ? `${plural(in30, 'examen')} dans les 30 prochains jours · ${plural(all.length, 'épreuve')} ce semestre` : '', `<button class="btn" data-act="url" data-url="https://inside.albertschool.com/me/exams">${I.external}Inside</button>`);
   if (!all.length) return html + noData();
   const next = upcoming[0];
   if (next) {

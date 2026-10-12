@@ -96,7 +96,7 @@ export function scheduleItem(raw) {
   if (!raw?.start || Number.isNaN(Date.parse(raw.start))) return null;
   const start = new Date(raw.start).toISOString();
   const minutes = rangeMinutes(raw.range);
-  const exam = /exam/i.test(raw.badge || '') || /\/me\/grades/.test(raw.href || '');
+  const exam = /exam/i.test(raw.badge || '') || /\/me\/(grades|exams)/.test(raw.href || '');
   const known = new Set([raw.range, raw.badge, raw.title, raw.code].map(x => String(x || '').trim()).filter(Boolean));
   const extras = (raw.leaves || []).map(x => String(x).trim()).filter(x => x && !known.has(x));
   const code = String(raw.code || '').toUpperCase() || (String(raw.title).match(COURSE_CODE)?.[1] || '').toUpperCase();
@@ -118,15 +118,32 @@ export function scheduleItem(raw) {
   return item;
 }
 
-/** Ligne du tableau « My exams » : { Exam: [...], Module: [...], Date: [...], ... }. */
-export function examRow(cells) {
+/**
+ * Colonne « When » de /me/exams, sans année : « 14 Jan · 14:00–16:00 », « 2 Oct · 11:00 ».
+ * L'année se déduit de l'année scolaire : août-décembre -> academicYearStart, sinon l'année suivante.
+ */
+export function parseShortWhen(text, academicYearStart) {
+  const m = String(text || '').match(/(\d{1,2})\s+([A-Za-zÀ-ÿ]{3,9})\.?(?!\s*\d{4})/);
+  const mo = m ? monthIndex(m[2]) : undefined;
+  if (mo === undefined || !academicYearStart) return null;
+  const y = mo >= 7 ? academicYearStart : academicYearStart + 1;
+  const times = [...String(text).matchAll(/(\d{1,2}):(\d{2})\s*(AM|PM)?/gi)].map(t => to24(t[1], t[2], t[3]));
+  const [h, mi] = times[0] || [0, 0];
+  const start = parisToISO(y, mo, +m[1], h, mi);
+  const end = times[1] ? parisToISO(y, mo, +m[1], times[1][0], times[1][1]) : start;
+  return { start, end: Date.parse(end) < Date.parse(start) ? start : end };
+}
+
+/** Ligne du tableau « My exams » : { Exam: [...], Module: [...], Date|When: [...], ... }. */
+export function examRow(cells, academicYearStart) {
   const first = key => (cells[key] || [])[0] || '';
   const [name = '', mode = ''] = cells.Exam || [];
   const [code = '', courseTitle = ''] = cells.Module || [];
   const [startText = '', endText = ''] = cells.Date || [];
-  const start = parseDateTime(startText);
+  const short = cells.When ? parseShortWhen(cells.When.join(' '), academicYearStart) : null;
+  const start = short?.start || parseDateTime(startText);
   if (!name || !start) return null;
-  const end = parseDateTime(endText.replace(/^ends?\s*/i, '')) || start;
+  const end = short?.end || parseDateTime(endText.replace(/^ends?\s*/i, '')) || start;
   const duration = parseInt(first('Duration'), 10);
   const coeff = parseFloat(String(first('Coeff')).replace(',', '.'));
   const exam = {
@@ -150,7 +167,8 @@ export function examRow(cells) {
 export function attendanceRow(cells) {
   const course = (cells.Course || [])[0] || '';
   const code = course.match(COURSE_CODE)?.[1]?.toUpperCase() || '';
-  const ratio = String((cells.Attended || [])[0] || '').match(/(\d+)\s*\/\s*(\d+)/);
+  // Inside découpe désormais « 3/3 » en trois morceaux : ["3", "/", "3"].
+  const ratio = (cells.Attended || []).join(' ').match(/(\d+)\s*\/\s*(\d+)/);
   const rate = parseFloat(String((cells['Where you stand'] || [])[0] || '').replace(',', '.'));
   if (!code || !ratio) return null;
   return {

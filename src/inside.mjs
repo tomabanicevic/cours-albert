@@ -24,6 +24,27 @@ export const PAGE = {
       return { headers, rows };
     });
   },
+  // Notes : un tableau par cours ; le code du cours (« Foundations MAT11-1 ») est écrit juste au-dessus.
+  gradeTables: () => {
+    const leaves = el => { const out = []; const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) { const s = n.textContent.replace(/\s+/g, ' ').trim(); if (s) out.push(s); } return out; };
+    const courseOf = table => {
+      for (let el = table.parentElement; el && el.tagName !== 'MAIN'; el = el.parentElement) {
+        if (el.querySelectorAll('table').length > 1) break;
+        const code = (el.innerText || '').match(/\b(?:MAT|DAT|BUS|HUM)\d{2}-\d+\b/i);
+        if (code) return code[0].toUpperCase();
+      }
+      return '';
+    };
+    return [...document.querySelectorAll('main table')].map(table => {
+      const headers = [...table.querySelectorAll('thead th')].map(th => th.textContent.replace(/\s+/g, ' ').trim());
+      const rows = [...table.querySelectorAll('tbody tr')].map(tr => {
+        const cells = {};
+        [...tr.cells].forEach((td, i) => { cells[td.dataset.label || headers[i] || `col${i}`] = leaves(td); });
+        return cells;
+      });
+      return { headers, rows, course: courseOf(table) };
+    });
+  },
   schedule: () => {
     const leaves = el => { const out = []; const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) { const s = n.textContent.replace(/\s+/g, ' ').trim(); if (s) out.push(s); } return out; };
     const main = document.querySelector('main');
@@ -147,25 +168,49 @@ async function readSchedule(page, ctx) {
   ctx.state.scheduleChecked = new Date().toISOString();
 }
 
+// Inside a déplacé les examens de /me/grades vers /me/exams (colonne « When » au lieu de « Date »,
+// un tableau « à venir » et un tableau « passés »). Les notes restent seules sur /me/grades.
 async function readExams(page, ctx) {
   ctx.progress({ phase: 'inside', label: 'Examens', current: 1, total: 1 });
-  await goto(page, `${ctx.base}/me/grades`, 'main table tbody tr');
+  await goto(page, `${ctx.base}/me/exams`, 'main table tbody tr');
   const tables = await page.evaluate(PAGE.tables);
-  const table = tables.find(t => t.headers.some(h => /^exam$/i.test(h)) && t.headers.some(h => /^date$/i.test(h)));
-  if (!table) {
+  const examTables = tables.filter(t => t.headers.some(h => /^exam$/i.test(h)) && t.headers.some(h => /^(date|when)$/i.test(h)));
+  if (!examTables.length) {
     const text = await page.locator('main').innerText().catch(() => '');
     if (/no (upcoming )?exams?/i.test(text)) { ctx.state.exams = []; ctx.state.examsChecked = new Date().toISOString(); }
     else ctx.report.warnings.push('Examens : tableau introuvable, liste précédente conservée.');
     return;
   }
-  const exams = table.rows.map(examRow).filter(Boolean);
+  const year = ctx.config.academicYearStart || new Date().getFullYear();
+  const previous = ctx.state.exams || [];
+  const sameExam = (a, b) => a.code === b.code && a.name === b.name && a.coeff === b.coeff;
+  const exams = examTables.flatMap(t => t.rows).map(cells => examRow(cells, year)).filter(Boolean).map(exam => {
+    // La colonne « Session » a disparu : reprendre l'ancienne pour garder le même identifiant
+    // (sinon chaque examen serait annoncé comme nouveau).
+    const old = exam.session ? null : previous.find(p => sameExam(p, exam));
+    if (!old) return exam;
+    return { ...exam, session: old.session, id: old.id };
+  });
   ctx.state.exams = exams;
   ctx.state.examsChecked = new Date().toISOString();
+}
 
-  await goto(page, `${ctx.base}/me/grades?tab=grades`, 'main table tbody tr, main h2, main h3', 6000).catch(() => {});
-  const gradeTables = await page.evaluate(PAGE.tables).catch(() => []);
-  const grades = gradeTables.find(t => t.rows.length);
-  ctx.state.grades = grades ? { headers: grades.headers, rows: grades.rows, checked: new Date().toISOString() } : { headers: [], rows: [], checked: new Date().toISOString() };
+async function readGrades(page, ctx) {
+  ctx.progress({ phase: 'inside', label: 'Notes', current: 1, total: 1 });
+  await goto(page, `${ctx.base}/me/grades`, 'main table tbody tr, main h2, main h3', 8000);
+  if (!page.url().includes('/me/grades')) throw new Error('La connexion Inside a expiré pendant la lecture des notes.');
+  const tables = await page.evaluate(PAGE.gradeTables);
+  const gradeTables = tables.filter(t => t.headers.some(h => /^grade$/i.test(h)));
+  const checked = new Date().toISOString();
+  if (!gradeTables.length) {
+    const text = await page.locator('main').innerText().catch(() => '');
+    if (/no grades?/i.test(text)) ctx.state.grades = { headers: [], rows: [], checked };
+    else ctx.report.warnings.push('Notes : tableau introuvable, notes précédentes conservées.');
+    return;
+  }
+  const headers = ['Cours', ...gradeTables[0].headers.filter(Boolean)];
+  const rows = gradeTables.flatMap(t => t.rows.map(cells => ({ Cours: [t.course || '—'], ...cells })));
+  ctx.state.grades = { headers, rows, checked };
 }
 
 async function readAttendance(page, ctx) {
@@ -332,6 +377,7 @@ export async function runInside(ctx) {
       ['Accueil et nouveautés', () => readHome(page, ctx)],
       ['Emploi du temps', () => readSchedule(page, ctx)],
       ['Examens', () => readExams(page, ctx)],
+      ['Notes', () => readGrades(page, ctx)],
       ['Présence', () => readAttendance(page, ctx)],
     ];
     for (const [label, step] of steps) {
